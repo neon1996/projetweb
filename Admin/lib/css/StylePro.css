@@ -1,0 +1,20 @@
+/* style de Digit */
+
+.pink {
+    background-color: pink ; 
+}
+
+.lightcyan{
+    background-color: lightcorail;
+}
+
+.lightyellow{
+    background-color: lightyellow;
+}
+.aligner {
+    display:inline-block;
+}
+
+.ecartTop3pc{
+    margin-top:3%;
+}
