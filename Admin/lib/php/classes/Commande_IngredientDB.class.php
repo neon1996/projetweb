@@ -19,7 +19,7 @@ class Commande_IngredientDB extends Client {
             $resultset->execute();
 
             while ($data = $resultset->fetch()) {
-                $_array[] = new Client($data);
+                $_array[] = new Commande_Ingredient($data);
             }
         } catch (PDOException $e) {
             print $e->getMessage();

@@ -1,7 +1,5 @@
-<?php
-
-class TypeDB extends Client {
-
+<?php 
+class TypeDB extends Type{
     private $_db;
     private $_array = array();
 
@@ -9,7 +7,7 @@ class TypeDB extends Client {
         $this->_db = $db;
     }
 
-    public function getType($login, $password) {
+    public function getType() {
         try {
             $query = "select * from type";
             // print $query;
@@ -19,7 +17,7 @@ class TypeDB extends Client {
             $resultset->execute();
 
             while ($data = $resultset->fetch()) {
-                $_array[] = new Client($data);
+                $_array[] = new Type($data);
             }
         } catch (PDOException $e) {
             print $e->getMessage();

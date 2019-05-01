@@ -18,12 +18,15 @@ $cnx = Connexion:: getInstance($dsn, $user, $pass);
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
 
         <link rel="stylesheet" href="./Admin/lib/css/Custom.css" />
-        <link rel="stylesheet" type="text/css" href="./admin/lib/css/Style.css"/>
-        <script src="./Admin/lib/js/FonctionsJqueryDA.js"></script>
+        <link rel="stylesheet" type="text/css" href="./admin/lib/css/StylePro.css"/> <!--fichier css-->
+        <script src="./Admin/lib/js/FonctionsJqueryDA.js"></script> <!--javascript-->
+        
+        <title>Restaurant</title>
     </head>
 
     <body>
         <header>
+            
             <div class ="container">
 
                 <?php
@@ -32,12 +35,26 @@ $cnx = Connexion:: getInstance($dsn, $user, $pass);
                 }
                 ?>
 
-                <div class="">
-                    <a href="index.php?page=login.php">Administration</a>
-                </div>
+                <!--<div class="">
+                    <a href="index.php?page=Connexion.php">Se connecter</a>
+                </div>*/-->
 
             </div>
+            
+            
         </header>
+        
+       
+        
+      <!--  <img src="Admin/image/background_Site.jpg" id="background_site"> <!-- CSS stylepro.css-->
+        
+         <!-- Permet à l'image de background de prendre toute la page 
+         <script type="text/javascript"> 
+           
+            resizeBackground();
+            
+        </script>-->
+            
         <section>
             <div class="container">
 
@@ -63,7 +80,14 @@ $cnx = Connexion:: getInstance($dsn, $user, $pass);
 
         <footer>
             <div class="container text-center" id="footer">
-                Inclure ici la page de footer
+                <?php
+                if (file_exists($path)) {
+                  
+                include ('Admin/Page/Footer.php');
+                
+                }
+                ?>
+                
             </div>
         </footer>
 

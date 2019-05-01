@@ -19,7 +19,7 @@ class CommandeDB extends Client {
             $resultset->execute();
 
             while ($data = $resultset->fetch()) {
-                $_array[] = new Client($data);
+                $_array[] = new Commande($data);
             }
         } catch (PDOException $e) {
             print $e->getMessage();

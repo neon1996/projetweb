@@ -1,6 +1,6 @@
 <?php
 
-class Vue_produit_genre_typeDB {
+class Vue_client_commandeDB {
    
     private $_db;
     private $_array = array();
@@ -14,7 +14,7 @@ class Vue_produit_genre_typeDB {
             
         try{
             $this->_db->beginTransaction();
-            $query = "select * from vue_produit_genre_type";
+            $query = "select * from vue_client_commande";
             $resultset = $this->_db->prepare($query);            
             $resultset->execute();
             $this->_db->commit();         
@@ -33,13 +33,13 @@ class Vue_produit_genre_typeDB {
         }
     }
     
-        public function getProduitsByType($id_type){
-        print 'coucou';
+        public function getProduitsByType($id_client){
+       
         try{
             $this->_db->beginTransaction();
-            $query = "select * from vue_produit_genre_type where id_type=:id_type";
+            $query = "select * from vue_client_commande where id_client=:id_client";
             $resultset = $this->_db->prepare($query);  
-            $resultset->bindValue(':id_type',$id_type);
+            $resultset->bindValue(':id_client',$id_client);
             $resultset->execute();
             $this->_db->commit();         
             while($data = $resultset->fetch()){
