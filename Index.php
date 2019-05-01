@@ -46,15 +46,7 @@ $cnx = Connexion:: getInstance($dsn, $user, $pass);
         
        
         
-      <!--  <img src="Admin/image/background_Site.jpg" id="background_site"> <!-- CSS stylepro.css-->
-        
-         <!-- Permet à l'image de background de prendre toute la page 
-         <script type="text/javascript"> 
-           
-            resizeBackground();
-            
-        </script>-->
-            
+     
         <section>
             <div class="container">
 
@@ -72,7 +64,7 @@ $cnx = Connexion:: getInstance($dsn, $user, $pass);
                 if (file_exists($path)) {
                     include ($path);
                 } else {
-                    include ('Admin/Page/Page404.php');
+                    include ('./Admin/Page/Page404.php');
                 }
                 ?>
             </div>
@@ -83,7 +75,7 @@ $cnx = Connexion:: getInstance($dsn, $user, $pass);
                 <?php
                 if (file_exists($path)) {
                   
-                include ('Admin/Page/Footer.php');
+                include ('./Admin/Page/Footer.php');
                 
                 }
                 ?>

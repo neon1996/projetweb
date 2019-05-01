@@ -4,8 +4,8 @@
 session_start();
 ?>
 <?php
-//require './admin/lib/php/admin_liste_include.php';
-//$cnx = Connexion::getInstance($dsn, $user, $pass);
+require '../Admin/lib/php/admin_liste_include.php';
+$cnx = Connexion::getInstance($dsn, $user, $pass);
 
 ?>
 
@@ -28,8 +28,8 @@ session_start();
             <div class ="container">
                 
                 <?php
-                if (file_exists('./Client/lib/c_menu.php')) {
-                    require './Client/lib/c_menu.php';
+                if (file_exists('./lib/c_menu.php')) {
+                    require './lib/c_menu.php';
                 }
                 ?>
                 <div class="">
@@ -53,7 +53,7 @@ session_start();
             if (file_exists($path)) {
                 include ($path);
             } else {
-                 include ('./Page/Page404.php');;
+                 include ('Admin/Page/Page404.php');;
             }
            
             ?>
@@ -63,9 +63,9 @@ session_start();
         <footer>
             <div class="container text-center" id="footer">
             <?php
-                if ('./Page/Footer.php') {
+                if ('./Admin/Page/Footer.php') {
                   
-                include ('./Page/Footer.php');
+                include ('./Admin/Page/Footer.php');
                 
                 }
                 

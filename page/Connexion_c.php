@@ -13,7 +13,7 @@ if (isset($_POST['submit_login'])) {
     } else {
         $_SESSION['client'] = 1;
         unset($_SESSION['page']);
-        print "<meta http-equiv=\"refresh\": Content=\";URL=./Admin/Client/Index_c.php\">";
+        print "<meta http-equiv=\"refresh\": Content=\";URL=./Client/Index_c.php\">";
         
     }
 }

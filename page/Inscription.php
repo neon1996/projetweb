@@ -7,14 +7,18 @@
 if (isset($_GET['submit_inscription'])) {
     extract($_GET, EXTR_OVERWRITE);
 
-    if (empty($nom) || empty($prenom) || empty($telephone) || empty($email) || empty($mdp) || empty($rue) || empty($numero) || empty($ville) || empty($cp)) {
+    if (empty($nom) || empty($prenom) || empty($telephone) || empty($email) || empty($mdp) 
+            || empty($rue) || empty($numero) || empty($ville) || empty($cp)) {
         $erreur = "<span class='txtRouge txtGras'>Veuillez remplir tous les champs</span>";
     } else {
         $cl = new ClientDB($cnx);
         $retour = $cl->addClient($_GET);
         print "Insertion dans la base de données réussie ! <br/>";
+        
     }
+    //var_dump($_GET);
 }
+
 
 
 if (isset($erreur))
