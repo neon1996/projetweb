@@ -9,7 +9,7 @@ class Vue_ingredient_typeDB {
         $this->_db = $db;
     }
 
-        public function getAllProduits(){
+        public function getAllIngredient(){
             
             
         try{

@@ -15,9 +15,18 @@
                 <li><a href="./index.php?page=Accueil.php">Home</a></li>
                 <li><a href="./index.php?page=Carte.php">Menu</a></li>
                 <li><a href="./index.php?page=Inscription.php">Inscription</a></li>
-                <li><a href="./index.php?page=Apropos.php">Contact</a></li
+                <li><a href="./index.php?page=Apropos.php">Contact</a></li>
                 <li><a href="./index.php?page=Connexion.php">Administration</a></li>
                 <li><a href="./index.php?page=Connexion_c.php">Client</a></li>
+                <li>
+               <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown"> -->
+                    <a class="dropdown-item" href="index.php?page=catalogue.php">Catalogue</a>
+                    <a class="dropdown-item" href="#">autre lien</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="index.php?page=jquery1.php">jquery1</a>
+                    <!-- </div> -->
+    </li>
+
             </ul>
         </div>
         

@@ -13,7 +13,7 @@ class ClientDB extends Client {
     public function addClient($data) {
 
         $query = "select ajouter_client(:nom,:prenom,:telephone,"
-                . ":email,:mdp,"
+                . ":email1,:email2,:mdp,"
                 . ":rue,:ville,:numero,:cp) "
                 . "as retour";
         
@@ -24,7 +24,8 @@ class ClientDB extends Client {
             $resultset->bindValue(':nom', $data['nom'], PDO::PARAM_STR);
             $resultset->bindValue(':prenom', $data['prenom'], PDO::PARAM_STR);
             $resultset->bindValue(':telephone', $data['telephone'], PDO::PARAM_STR);
-            $resultset->bindValue(':email', $data['email'], PDO::PARAM_STR);
+            $resultset->bindValue(':email1', $data['email1'], PDO::PARAM_STR);
+            //$resultset->bindValue(':email2', $data['email2'], PDO::PARAM_STR);
             $resultset->bindValue(':mdp', $data['mdp'], PDO::PARAM_STR);
             $resultset->bindValue(':rue', $data['rue'], PDO::PARAM_STR);
             $resultset->bindValue(':ville', $data['ville'], PDO::PARAM_STR);
@@ -68,15 +69,16 @@ class ClientDB extends Client {
       
     }*/
 
-    public function getClient() {
+    public function getClient($email,$mdp) {
         
-        $query = "select * from client where email=:email and mdp =:mdp";
+        $query = "select * from client where email=:email1 and mdp=:mdp";
         try {
             $resultset = $this->_db->prepare($query);
-            $resultset->bindValue(':email', $email, PDO::PARAM_STR);
+            $resultset->bindValue(':email1', $email, PDO::PARAM_STR);
             $resultset->bindValue(':mdp', $mdp, PDO::PARAM_STR);
 
             $resultset->execute();
+           // print "email = ".$email;
         } catch (PDOException $e) {
             print $e->getMessage();
         }
@@ -90,29 +92,10 @@ class ClientDB extends Client {
                 print $e->getMessage();
             }
         }
+        //var_dump($_array);
         return $_array;
     }
-    /*
-        try {
-            $query = "select * from client";
-            
-            $resultset = $this->_db->prepare($query);
-            //$resultset->bindValue(':login',$login);
-            //$resultset->bindValue(':password',$password);
-            $resultset->execute();
-            
-            while ($data = $resultset->fetch()) {
-                $_array[] = new Client($data);
-            }
-        } catch (PDOException $e) {
-            print $e->getMessage();
-        }
-        if (!empty($_array)) {
-            return $_array;
-        } else {
-            return null;
-        }
-    }*/
+    
 
 }
 

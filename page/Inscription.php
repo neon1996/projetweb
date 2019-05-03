@@ -1,7 +1,6 @@
-<hgroup>
+
     <h3 class="aligner txtGras">Inscription sur notre site :</h3>
 
-</hgroup>
 
 <?php
 if (isset($_GET['submit_inscription'])) {
@@ -34,9 +33,23 @@ if (isset($erreur))
         <div class ="form-group">
             
         <br/>
+        
+        <label for="email1">Email :</label>               
+        <input type="email" id="email1" name="email1" placeholder="aaa@aaa.aa"/>
+        <br/>
+        
+
+        <label for="email2">Email vérification :</label>               
+        <input type="email" id="email2" name="email2" placeholder="aaa@aaa.aa"/>
+        <br/>
+
+        <label  for="mdp">Mot de passe : </label>
+        <input type="password" name="mdp" id="mdp"/>
+        <br/>
+        
         <label for="nom">Votre nom :</label>
         <input type="text" name="nom" id="nom" />
-
+ 
         <br/>
 
         <label for="prenom">Votre prénom :</label></td>
@@ -45,14 +58,6 @@ if (isset($erreur))
 
         <label for="telephone">Telephone :</label></td>
         <input type="text" name="telephone" id="telephone" />
-        <br/>
-
-        <label for="email">Email :</label>               
-        <input type="email" id="email" name="email" placeholder="aaa@aaa.aa"/>
-        <br/>
-
-        <label  for="mdp">Mot de passe : </label>
-        <input type="password" name="mdp" id="mdp"/>
         <br/>
 
         <label for="rue">Rue :</label>

@@ -9,12 +9,12 @@ class Vue_client_commandeDB {
         $this->_db = $db;
     }
 
-        public function getAllProduits(){
+        public function getAllClient(){
             
             
         try{
             $this->_db->beginTransaction();
-            $query = "select * from vue_client_commande";
+            $query = "select * from vue_client_commande where nom_search=:nom";
             $resultset = $this->_db->prepare($query);            
             $resultset->execute();
             $this->_db->commit();         
@@ -33,13 +33,13 @@ class Vue_client_commandeDB {
         }
     }
     
-        public function getProduitsByType($id_client){
+        public function getClientByName($nom){
        
         try{
             $this->_db->beginTransaction();
-            $query = "select * from vue_client_commande where id_client=:id_client";
+            $query = "select * from vue_client_commande where nom=:nom";
             $resultset = $this->_db->prepare($query);  
-            $resultset->bindValue(':id_client',$id_client);
+            $resultset->bindValue(':nom',$nom);
             $resultset->execute();
             $this->_db->commit();         
             while($data = $resultset->fetch()){

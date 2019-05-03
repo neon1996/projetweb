@@ -1,14 +1,13 @@
-<hgroup>
+
     <h3 class="">Notre carte !</h3>
     
-</hgroup>
+
 
 <?php
 //récupération des types pour la liste déroulante
 $typ = new TypeDB($cnx);
 $types = $typ->getType();
 $nbr_type = count($types);
-
 
 
 //récupération des produits
