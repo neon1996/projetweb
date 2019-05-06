@@ -30,11 +30,12 @@ $(document).ready(function(){
             {
                //adjonction des paramètres qui accompagnent le nom du fichier appelé
                 var parametre = 'champ=' + name + '&id=' + ident + '&nouveau=' + valeur2;
+               // alert (parametre);
                 var retour = $.ajax({
                     type: 'GET',
                     data: parametre,
                     dataType: "text",
-                    url: "./Admin/lib/php/ajax/ajaxUpdateClient.php",
+                    url: "./Admin/lib/php/ajax/ajaxUpdateIngredient.php",
                     success: function (data) {
                        //rien de particulier à faire
                         console.log("success");
@@ -63,7 +64,7 @@ $(document).ready(function(){
         //if (($.trim(email1) != '' && $.trim(email2 != '')) && (email1 == email2) && $.trim(mdp != '')) {
             //alert("email1 = "+email1+" et email2 = "+email2+ " et password = "+password);
             var recherche = "email=" + email1 + "&mdp=" + mdp;   
-        alert(recherche);
+       // alert(recherche);
             $.ajax({
                 type: 'GET',
                 data: recherche,

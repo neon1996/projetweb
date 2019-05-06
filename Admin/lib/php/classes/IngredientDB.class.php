@@ -1,6 +1,6 @@
 <?php
 
-class IngredientDB extends Client {
+class IngredientDB extends Ingredient {
 
     private $_db;
     private $_array = array();
@@ -14,8 +14,7 @@ class IngredientDB extends Client {
             $query = "select * from ingredient";
             // print $query;
             $resultset = $this->_db->prepare($query);
-          //  $resultset->bindValue(':login', $login);
-          //  $resultset->bindValue(':password', $password);
+         
             $resultset->execute();
 
             while ($data = $resultset->fetch()) {
@@ -28,6 +27,20 @@ class IngredientDB extends Client {
             return $_array;
         } else {
             return null;
+        }
+    }
+
+    public function updateIngredient($champ,$nouveau,$id){        
+        
+        try {
+          
+            $query="UPDATE ingredient set ".$champ." = '".$nouveau."' where id_ingredient ='".$id."'";            
+           // var_dump($id);
+            $resultset = $this->_db->prepare($query);
+            $resultset->execute();            
+            
+        }catch(PDOException $e){
+            print $e->getMessage();
         }
     }
 

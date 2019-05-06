@@ -18,7 +18,7 @@ $cnx = Connexion::getInstance($dsn, $user, $pass);
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
-        <link rel="stylesheet" href="lib/css/Custom.css" />
+       <!-- <link rel="stylesheet" href="lib/css/CustomPro.css" /> -->
         <link rel="stylesheet" type="text/css" href="lib/css/StylePro.css"/>
         <script src='./lib/js/FonctionsJqueryDA.js'></script>
     </head>

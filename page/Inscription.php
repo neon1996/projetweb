@@ -1,12 +1,11 @@
 
     <h3 class="aligner txtGras">Inscription sur notre site :</h3>
 
-
 <?php
 if (isset($_GET['submit_inscription'])) {
     extract($_GET, EXTR_OVERWRITE);
 
-    if (empty($nom) || empty($prenom) || empty($telephone) || empty($email) || empty($mdp) 
+    if (empty($nom) || empty($prenom) || empty($telephone) || empty($email1) || empty($mdp) 
             || empty($rue) || empty($numero) || empty($ville) || empty($cp)) {
         $erreur = "<span class='txtRouge txtGras'>Veuillez remplir tous les champs</span>";
     } else {
@@ -17,7 +16,6 @@ if (isset($_GET['submit_inscription'])) {
     }
     //var_dump($_GET);
 }
-
 
 
 if (isset($erreur))

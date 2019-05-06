@@ -1,7 +1,5 @@
 /* style de Digit */
 
-
-
 footer
 {
     margin-top:150px ;
@@ -9,6 +7,14 @@ footer
     font-family:"Trebuchet MS",sans-serif;
     font-size:14px
 
+}
+
+.aligner {
+    display:inline-block;
+}
+
+.ecartTop3pc{
+    margin-top:3%;
 }
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");/*!
  * bootswatch v3.4.1

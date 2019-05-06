@@ -1,7 +1,5 @@
 
-    <h3 class="">Notre carte !</h3>
-    
-
+<h3 class="">Notre carte !</h3>
 
 <?php
 //récupération des types pour la liste déroulante
@@ -10,21 +8,21 @@ $types = $typ->getType();
 $nbr_type = count($types);
 
 
-//récupération des produits
+//récupération des produits dans la vue créée
 $vue = new Vue_ingredient_typeDB($cnx);
 
 $liste = array();
 $liste = null;
 //sans filtre de produits
 if (!isset($_GET['submit_choix_type'])) {
-    $liste = $vue->getAllProduits();
+    $liste = $vue->getAllIngredient();
 }
 //avec filtre si on a fait un choix dans la liste déroulante: 
 else {
     if (isset($_GET['choix_type']) && $_GET['choix_type'] != "") {
         $liste = $vue->getProduitsByType($_GET['choix_type']);
     } else {
-        $liste = $vue->getAllProduits();
+        $liste = $vue->getAllIngredient();
     }
 }
 ?>
@@ -63,14 +61,14 @@ if ($liste != null) {
         for ($i = 0; $i < $nbr; $i++) {
             ?>
             <div class="row">
-                
+
                 <div class="col-sm-5 text-center borderBottom">
-                            <?php
-                            print "<br/>" . $liste[$i]['nom_ingredient'] ."<br/>" ;
-                            print "<br/>" . $liste[$i]['description_ingredient'] . "<br/>" ;
-                            print "<br/>" . $liste[$i]['prix_ingredient'] . " €<br/>";
-                            ?>
-                    
+                    <?php
+                    print "<br/>" . $liste[$i]['nom_ingredient'] . "<br/>";
+                    print "<br/>" . $liste[$i]['description_ingredient'] . "<br/>";
+                    print "<br/>" . $liste[$i]['prix_ingredient'] . " €<br/>";
+                    ?>
+
 
                 </div>
             </div>
