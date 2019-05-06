@@ -13,8 +13,8 @@ $(document).ready(function(){
         }
 
         //2 lignes suivantes pour firefox
-        //$(this).contentEditable = "true";
-        //$(this).addClass("borderInput");
+        $(this).contentEditable = "true";
+        $(this).addClass("borderInput");
 
        //récupération, pour la zone cliquée, des attributs id et name, pour les envoyer à la requête sql
         var ident = $(this).attr("id");
