@@ -6,10 +6,12 @@ if (isset($_POST['submit_login'])) {
 
     extract($_POST, EXTR_OVERWRITE);
     $log = new ClientDB($cnx);
-    $client = $log->getClient();
+    /* @var $email type */
+    $client = $log->getClient($email,$mdp);
     
     if (is_null($client)) {
-        print "</br>Login ou mot de passe incorrect";
+        var_dump($client);
+        print "</br>Email ou mot de passe incorrect";
     } else {
         $_SESSION['client'] = 1;
         unset($_SESSION['page']);
@@ -25,10 +27,10 @@ if (isset($_POST['submit_login'])) {
     <div class="form-group">
         
         <h3>Se connecter</h3>
-        Login : <input type="text" name="login" id="login"/></br>
+        Email : <input type="email" name="email" id="email"/></br>
         <br/>
         <br/> 
-        Mot de passe : <input type="password" name="password" id="password"/></br>
+        Mot de passe : <input type="password" name="mdp" id="mdp"/></br>
         <br/>
         <br/>
         <input type="submit" name="submit_login" id="submit_login" value="Se connecter"/>

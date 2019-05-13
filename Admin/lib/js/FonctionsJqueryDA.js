@@ -3,7 +3,9 @@
 
 $(document).ready(function(){
     
-       $("span[id]").click(function () {
+    
+    // Tableau editable vue ingredient - type !! uniquement ingrédient éditable ! 
+    $("span[id]").click(function () {
       //Récupération du contenu d'origine de la zone cliquée
         var valeur1 = $.trim($(this).text());
 
@@ -35,7 +37,7 @@ $(document).ready(function(){
                     type: 'GET',
                     data: parametre,
                     dataType: "text",
-                    url: "./Admin/lib/php/ajax/ajaxUpdateIngredient.php",
+                    url: "./lib/php/ajax/ajaxUpdateIngredient.php",
                     success: function (data) {
                        //rien de particulier à faire
                         console.log("success");
@@ -49,8 +51,57 @@ $(document).ready(function(){
             };
         });
     });
+    
+    
+    // Tableau éditable vue Client - Commande
+    
+    $("span[id]").click(function () {
+      //Récupération du contenu d'origine de la zone cliquée
+        var valeur1 = $.trim($(this).text());
 
+        //s'il fallait tester si on utilise edge :
+        if (/Edge\/\d./i.test(navigator.userAgent)) {
+            $(this).addClass("borderInput");
+        }
 
+        //2 lignes suivantes pour firefox
+        $(this).contentEditable = "true";
+        $(this).addClass("borderInput");
+
+       //récupération, pour la zone cliquée, des attributs id et name, pour les envoyer à la requête sql
+        var ident = $(this).attr("id");
+        var name = $(this).attr("name");
+
+        $(this).blur(function () {
+            $(this).removeClass("borderInput");
+           //récupération de la nouveau contenu du champ qui vient de perdre le focus (blur)
+            var valeur2 = $(this).text();
+            valeur2 = $.trim(valeur2);
+
+            if (valeur1 != valeur2) // Si on a fait un changement
+            {
+               //adjonction des paramètres qui accompagnent le nom du fichier appelé
+                var parametre = 'champ=' + name + '&id=' + ident + '&nouveau=' + valeur2;
+               // alert (parametre);
+                var retour = $.ajax({
+                    type: 'GET',
+                    data: parametre,
+                    dataType: "text",
+                    url: "./lib/php/ajax/ajaxUpdateClient.php",
+                    success: function (data) {
+                       //rien de particulier à faire
+                        console.log("success");
+                    }
+                });
+                retour.fail(function (jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR);
+                    console.log(textStatus);
+                    console.log(errorThrown);
+                });
+            };
+        });
+    });
+  
     //auto-complétion : 
    
    $('#mdp').blur(function () {
@@ -61,10 +112,10 @@ $(document).ready(function(){
          mdp = $('#mdp').val();
        // alert(email1 + " "+email2+ " "+mdp);
  
-        //if (($.trim(email1) != '' && $.trim(email2 != '')) && (email1 == email2) && $.trim(mdp != '')) {
+        if (($.trim(email1) != '' && $.trim(email2 != '')) && (email1 == email2) && $.trim(mdp != '')) {
             //alert("email1 = "+email1+" et email2 = "+email2+ " et password = "+password);
             var recherche = "email=" + email1 + "&mdp=" + mdp;   
-       // alert(recherche);
+         //alert(recherche);
             $.ajax({
                 type: 'GET',
                 data: recherche,
@@ -79,11 +130,14 @@ $(document).ready(function(){
                     $('#numero').val(data[0].numero);
                     $('#cp').val(data[0].cp);
                     
+                    
+                    
                     console.log(data[0].nom);
+                    console.log('dfghjk');
                 }
             });
            
-        //}
+       }
     });
     
     

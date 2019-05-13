@@ -14,7 +14,7 @@ class Vue_client_commandeDB {
             
         try{
             $this->_db->beginTransaction();
-            $query = "select * from vue_client_commande where nom_search=:nom";
+            $query = "select * from vue_client_commande";
             $resultset = $this->_db->prepare($query);            
             $resultset->execute();
             $this->_db->commit();         

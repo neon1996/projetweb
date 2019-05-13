@@ -9,11 +9,13 @@ if (isset($_POST['submit_login'])) {
     $admin = $log->getAdmin($admin, $password);
     
     if (is_null($admin)) {
+        
+        
         print "</br>Login ou mot de passe incorrect";
     } else {
         $_SESSION['admin'] = 1;
         unset($_SESSION['page']);
-        print "<meta http-equiv=\"refresh\": Content=\";URL=./Admin/index.php\">";
+        print "<meta http-equiv=\"refresh\": Content=\";URL=./Admin/Index.php\">";
         
     }
 }

@@ -1,5 +1,5 @@
 <?php
-//header('Content-Type: application/json');
+header('Content-Type: application/json');
 require '../pgConnect.php';
 require '../classes/Connexion.class.php';
 require '../classes/Client.class.php';

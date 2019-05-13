@@ -1,5 +1,5 @@
 
-<h3 class="">Notre carte !</h3>
+<h3 class="">Nos ingrédients !</h3>
 
 <?php
 //récupération des types pour la liste déroulante
@@ -64,9 +64,9 @@ if ($liste != null) {
 
                 <div class="col-sm-5 text-center borderBottom">
                     <?php
-                    print "<br/>" . $liste[$i]['nom_ingredient'] . "<br/>";
-                    print "<br/>" . $liste[$i]['description_ingredient'] . "<br/>";
-                    print "<br/>" . $liste[$i]['prix_ingredient'] . " €<br/>";
+                    print " " . $liste[$i]['nom_ingredient'] . " ";
+                    print " " . $liste[$i]['description_ingredient'] . " ";
+                    print " " . $liste[$i]['prix_ingredient'] . " € ";
                     ?>
 
 

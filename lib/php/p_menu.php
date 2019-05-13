@@ -15,22 +15,15 @@
         </div>
 
         <ul class="nav navbar-nav">
-
-
             <li class="nav-item"><a class="nav_link" href="./index.php?page=Accueil.php">Home</a></li>
             <li class="nav-item"><a class="nav_link" href="./index.php?page=Inscription.php">Inscription</a></li>
 
             <li class="nav-item">
                 <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown"> -->
                 <a class="nav_link" href="index.php?page=Menu.php">Menu</a>
-                <!--   
-                 <div class="dropdown-divider"></div> 
-               <a class="dropdown-item" href="index.php?page=jquery1.php">jquery1</a>
-                <!-- </div> -->
             </li>
             <li class="nav-item"><a class="nav_link" href="./index.php?page=Carte.php">Liste ingredients</a></li>
             <li class="nav-item"><a class="nav_link" href="./index.php?page=Apropos.php">Contact</a></li>
-            <li class="nav-item"><a class="nav_link" href="./index.php?page=Connexion_c.php">Client</a></li>
             <li class="nav-item"><a class="nav_link" href="./index.php?page=Connexion.php">Administration</a></li>
 
         </ul>

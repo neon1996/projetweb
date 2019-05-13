@@ -26,7 +26,19 @@ class Commande {
   public function __set ($nom, $valeur) {
      $this->_attributs[$nom] = $valeur;    
   }
-   
+   public function updateCommande($champ,$nouveau,$id){        
+        
+        try {
+          
+            $query="UPDATE commande set ".$champ." = '".$nouveau."' where id_com ='".$id."'";            
+           // var_dump($id);
+            $resultset = $this->_db->prepare($query);
+            $resultset->execute();            
+            
+        }catch(PDOException $e){
+            print $e->getMessage();
+        }
+    }
 }
 
 ?>

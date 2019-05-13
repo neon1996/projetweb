@@ -26,6 +26,8 @@ class Client {
   public function __set ($nom, $valeur) {
      $this->_attributs[$nom] = $valeur;    
   }
+  
+ 
    
 }
 

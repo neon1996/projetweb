@@ -32,9 +32,6 @@ class ClientDB extends Client {
             $resultset->bindValue(':cp', $data['cp'], PDO::PARAM_STR);
             $resultset->execute();
             $retour = $resultset->fetchColumn(0); // permet le retour de la fonction embarquée (pgadmin)
-
-
-
             return $retour;
         } catch (PDOException $e) {
             print "<br/>Echec de l'insertion";
@@ -43,30 +40,51 @@ class ClientDB extends Client {
     }
 
     public function getClient($email, $mdp) {
-
-        $query = "select * from client where email=:email1 and mdp=:mdp";
+        $query = "select * from client where email =:email and mdp =:mdp";
         try {
             $resultset = $this->_db->prepare($query);
-            $resultset->bindValue(':email1', $email, PDO::PARAM_STR);
+            $resultset->bindValue(':email', $email, PDO::PARAM_STR);
             $resultset->bindValue(':mdp', $mdp, PDO::PARAM_STR);
-
             $resultset->execute();
+
+            while ($data = $resultset->fetch()) {
+                $_array[] = new Client($data);
+            }
             // print "email = ".$email;
         } catch (PDOException $e) {
             print $e->getMessage();
         }
-
-        while ($data = $resultset->fetch()) {
-            try {
-                // nous n'employerons pas d'objet, afin de faciliter la conversion en Json dans le 
-                //fichier ajax ajaxRechercheClient.php
-                $_array[] = $data;
-            } catch (PDOException $e) {
-                print $e->getMessage();
-            }
+        if (!empty($_array)) {
+            return $_array;
+        } else {
+            return null;
         }
-        //var_dump($_array);
-        return $_array;
+        /*  while ($data = $resultset->fetch()) {
+          try {
+          // nous n'employerons pas d'objet, afin de faciliter la conversion en Json dans le
+          //fichier ajax ajaxRechercheClient.php
+          $_array[] = $data;
+          var_dump($data);
+          } catch (PDOException $e) {
+          print $e->getMessage();
+          }
+          }
+          //var_dump($_array);
+          return $_array; */
+    }
+    
+     public function updateClient($champ,$nouveau,$id){        
+        
+        try {
+          
+            $query="UPDATE client set ".$champ." = '".$nouveau."' where id_client ='".$id."'";            
+           // var_dump($id);
+            $resultset = $this->_db->prepare($query);
+            $resultset->execute();            
+            
+        }catch(PDOException $e){
+            print $e->getMessage();
+        }
     }
 
 }

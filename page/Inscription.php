@@ -23,8 +23,6 @@ if (isset($erreur))
 ?>
 
 
-<span class="txtGras">Veuillez entrer vos coordonnées :</span> <br/><br/>
-
 <div class="container">
 
     <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="get" id="form_inscription">
