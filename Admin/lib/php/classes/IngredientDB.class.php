@@ -9,7 +9,7 @@ class IngredientDB extends Ingredient {
         $this->_db = $db;
     }
 
-    public function getIngredient($login, $password) {
+    public function getIngredient($admin, $password) {
         try {
             $query = "select * from ingredient";
             // print $query;

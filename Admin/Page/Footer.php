@@ -1,4 +1,6 @@
-
+<div class="panel panel-default col-xs-12 col-sm-12 col-md-10 col-lg-12">
+  
+  <div class="panel-footer">
 <footer class="-bg-footer" id="footer">
     <div class="container-fluid">
         <div class="row footer-align">
@@ -18,7 +20,7 @@
                         <br>
                         <i class="fa fa-fax address"></i> +32476.34.48.56
                         <br>
-                        <i class="fa fa-envelope address"></i> <a href="mailto:mixtout@gmail.com">mixtout@gmail.com</a>
+                        <i class="fa fa-envelope address"></i> <a href="mailto:mixtout@gmail.com">prepaTout@gmail.com</a>
                     </address>
                 </div>
             </div>
@@ -38,3 +40,5 @@
 
 
 </footer>
+      </div>
+</div>

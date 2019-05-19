@@ -1,17 +1,9 @@
 /* style de Digit */
 
-footer
-{
-    margin-top:150px ;
-
-    font-family:"Trebuchet MS",sans-serif;
-    font-size:14px
-
-}
-
 .aligner {
     display:inline-block;
 }
+
 
 .ecartTop3pc{
     margin-top:3%;

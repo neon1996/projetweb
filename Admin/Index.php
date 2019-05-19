@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+    
+ 
 <?php
 session_start();
 include ('./lib/php/verifier_connexion.php');
@@ -17,6 +19,7 @@ $cnx = Connexion::getInstance($dsn, $user, $pass);
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
      
         <script src="./lib/js/jquery1_editable.js"></script> 
+        <script src='./lib/js/FonctionsJqueryDA.js'></script>
         
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous"/>
         
@@ -25,7 +28,7 @@ $cnx = Connexion::getInstance($dsn, $user, $pass);
 
        <!-- <link rel="stylesheet" href="lib/css/CustomPro.css" /> -->
         <link rel="stylesheet" type="text/css" href="lib/css/StylePro.css"/>
-        <script src='./lib/js/FonctionsJqueryDA.js'></script>
+        <title>Mix-Tout</title>
     </head>
 
     <body>
@@ -35,6 +38,7 @@ $cnx = Connexion::getInstance($dsn, $user, $pass);
                 <?php
                 if (file_exists('./lib/php/a_menu.php')) {
                     require './lib/php/a_menu.php';
+                    
                 }
                 ?>
            <!--    <div class="">
@@ -59,7 +63,7 @@ $cnx = Connexion::getInstance($dsn, $user, $pass);
             if (file_exists($path)) {
                 include ($path);
             } else {
-                 include ('./Page/Page404.php');;
+                 include ('./Page/Page404.php');
             }
            
             ?>

@@ -1,2 +1,2 @@
-<p>Ceci est ma page d'erreur ! </P>
+<div class="alert alert-danger" role="alert">Error-404...</div>
 

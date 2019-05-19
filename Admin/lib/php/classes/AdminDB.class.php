@@ -8,13 +8,14 @@ class AdminDB extends Admin {
         $this->_db = $db;
     }
     
-    public function getAdmin($login,$password){
+    public function getAdmin($login){
         try{
-            $query = "select * from admin where login =:login and password =:password ";
+            print $login;
+            $query = "select * from admin where login =:login ";
            // print $query;
             $resultset = $this->_db->prepare($query);
             $resultset->bindValue(':login',$login);
-            $resultset->bindValue(':password',$password);
+            
             $resultset->execute();
 
             while($data = $resultset->fetch()){

@@ -1,13 +1,13 @@
 <div class="panel panel-default col-xs-12 col-sm-12 col-md-10 col-lg-12">
     <div class="panel-heading">
-        <h3 class="aligner txtGras">Inscription sur notre site :</h3>
+        <h3 class="aligner txtGras">Inscription d'un nouveau client :</h3>
 
     </div>
     <div class="panel-body">
 
 
-
         <?php
+        include ('./lib/php/verifier_connexion.php');
         if (isset($_POST['submit_inscription'])) {
             extract($_POST, EXTR_OVERWRITE);
 
@@ -19,7 +19,7 @@
                 $retour = $cl->addClient($_POST);
                 ?><div class="alert alert-success" role="alert">Inscription réussie !</div><?php
             }
-            // var_dump($_POST);
+            //var_dump($_POST);
         }
 
 
@@ -28,16 +28,17 @@
         ?>
 
 
-        <div class="container-fluid">
+        <div class="container">
 
             <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="POST" id="form_inscription">
-               <!-- <div class ="form-group">-->
+                <div class ="form-group">
 
                     <br/>
-                   
-                 <label for="email1">Email :</label>               
+
+                    <label for="email1">Email :</label>               
                     <input type="email" id="email1" name="email1" placeholder="aaa@aaa.aa"/>
                     <br/>
+
 
                     <label for="email2">Email vérification :</label>               
                     <input type="email" id="email2" name="email2" placeholder="aaa@aaa.aa"/>

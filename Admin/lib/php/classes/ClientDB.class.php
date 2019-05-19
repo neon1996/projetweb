@@ -39,18 +39,19 @@ class ClientDB extends Client {
         }
     }
 
-    public function getClient($email, $mdp) {
+    public function getClient($admin, $password) {
+        print $admin;
         $query = "select * from client where email =:email and mdp =:mdp";
         try {
             $resultset = $this->_db->prepare($query);
-            $resultset->bindValue(':email', $email, PDO::PARAM_STR);
-            $resultset->bindValue(':mdp', $mdp, PDO::PARAM_STR);
+            $resultset->bindValue(':email', $admin, PDO::PARAM_STR);
+            $resultset->bindValue(':mdp', $password, PDO::PARAM_STR);
             $resultset->execute();
 
             while ($data = $resultset->fetch()) {
                 $_array[] = new Client($data);
             }
-            // print "email = ".$email;
+            
         } catch (PDOException $e) {
             print $e->getMessage();
         }
@@ -59,18 +60,7 @@ class ClientDB extends Client {
         } else {
             return null;
         }
-        /*  while ($data = $resultset->fetch()) {
-          try {
-          // nous n'employerons pas d'objet, afin de faciliter la conversion en Json dans le
-          //fichier ajax ajaxRechercheClient.php
-          $_array[] = $data;
-          var_dump($data);
-          } catch (PDOException $e) {
-          print $e->getMessage();
-          }
-          }
-          //var_dump($_array);
-          return $_array; */
+        
     }
     
      public function updateClient($champ,$nouveau,$id){        
