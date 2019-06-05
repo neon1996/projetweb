@@ -3,6 +3,7 @@
     <div class="panel-body">
 
         <?php
+        
 //récupération des types pour la liste déroulante
         $typ = new TypeDB($cnx);
         $types = $typ->getType();

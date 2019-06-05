@@ -4,7 +4,6 @@
 
         <?php
         
-        
         if (isset($_GET['id_ingredient'])) {
             extract($_GET, EXTR_OVERWRITE);
 
@@ -18,8 +17,8 @@
                 
                 $id_ingredient = $_GET['id_ingredient'];
                 
-                print "id commande = " . $id_com;
-                print "<br/>id ingredient = " . $id_ingredient;
+               // print "id commande = " . $id_com;
+               // print "<br/>id ingredient = " . $id_ingredient;
                 
                 ?> <div class="alert alert-success" role="alert">Votre commande nous est bien parvenue !</div><?php
                 // print "Insertion effectuée";
@@ -31,30 +30,6 @@
         } else {
             print "<p><br/><span class='txtGras'>Pour vous inscrire, venez<a href='index.php?page=Inscription.php'> ici</a></span></p>";
         }
-
-
-        if (!isset($_GET['commander'])) {
-            print "<p><br/><span class='txtGras'>Pour commander, cliquez <a href='index.php?page=Listeingredient.php'> ici</a> votre plat.</span></p>";
-        } else {
-            /*
-              print "<br/>Rappel du plat commandé<br/><br/>";
-              ?>
-              <div class="row">
-
-              <div class="col-xs-8 pull-left">
-              <br/><span class="txtGras">Votre plat : <span class="txtRouge">
-              <?php print ($_GET['id_ingredient'])?>
-
-              [nom et détails du produit commandé]</span></span><br/>
-              </div>
-              </div>
-              <br/>
-              <?php
-              if (isset($erreur))
-              print $erreur;
-              
-             */
-        }
-        ?>
+?>
     </div>
 </div>

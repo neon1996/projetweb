@@ -5,4 +5,3 @@ if (!isset($_SESSION['admin'])) {
     <?php
     exit();
 }
-

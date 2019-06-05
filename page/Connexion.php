@@ -1,4 +1,7 @@
-<?php
+<div class="panel panel-default col-xs-12 col-sm-12 col-md-10 col-lg-12">
+    <div class="panel-heading"><h3>Espace Connexion : </h3></div>
+    <div class="panel-body">
+ <?php
 //si on a cliqué sur le bouton "envoyé" du formulaire
 
 if (isset($_POST['submit_login'])) {
@@ -38,7 +41,7 @@ if (isset($_POST['submit_login'])) {
 <form action=" <?php print $_SERVER['PHP_SELF']; ?>" method="post">
     <div class="form-group col-xs-12 col-sm-12 col-md-10 col-lg-12">
 
-        <h3>Espace Connexion : </h3>
+        
         <br/>
         Login : <input type="text" name="admin" id="admin"/></br>
         <br/>
@@ -57,3 +60,4 @@ if (isset($_POST['submit_login'])) {
 
     </div>            
 </form>
+ </div>  </div> 

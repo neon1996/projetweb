@@ -12,7 +12,7 @@
 
         <ul class="nav navbar-nav">
             <li class="nav-item"><a class="nav_link" href="./index.php?page=Accueil.php">Home</a></li>
-            <li class="nav-item"><a class="nav_link" href="./index.php?page=Inscription.php">Inscription</a></li>
+            
 
             <li class="nav-item"><a class="nav_link" href="index.php?page=Menu.php">Menu</a></li>
             
@@ -25,7 +25,9 @@
                <li class="nav-item"><a class="nav_link" href="index.php?page=Disconnect.php">Déconnexion</a></li><?php
                ?><li class="nav-item"><a class="nav_link"><?php print "Statut : client";?></a></li><?php
             } else {
-                ?><li class="nav-item"><a class="nav_link" href="./index.php?page=Connexion.php">Connexion</a></li><?php
+                ?><li class="nav-item"><a class="nav_link" href="./index.php?page=Connexion.php">Connexion</a></li>
+                    <li class="nav-item"><a class="nav_link" href="./index.php?page=Inscription.php">Inscription</a></li>
+                        <?php
                 }
                 ?>
 
